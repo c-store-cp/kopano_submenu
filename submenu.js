@@ -1,6 +1,6 @@
-Ext.namespace('Zarafa.plugins.submenu');
+Ext.namespace('Zarafa.plugins.fehler');
 
-Zarafa.plugins.submenu.SP = Ext.extend(Zarafa.core.Plugin, {
+Zarafa.plugins.fehler.SP = Ext.extend(Zarafa.core.Plugin, {
 
 
   initPlugin : function()
@@ -23,8 +23,8 @@ SPButton:function()
 	//Add links and description for your menu here into the array
 	
 	var menuitems = [
-	"/link1.htm", "Link1",
-	"/link2.htm", "Link2"
+	"/client/resources/medienausleihe/medienausleihe.php", "Medienausleihe",
+	"/client/resources/fehler/fehler_unw.php", "Fehlermeldung"
 	];
 	
 	window.addEventListener("click", function(event){
@@ -48,9 +48,9 @@ SPButton:function()
 	var offsets1 = document.getElementById('ext-comp-1008').getBoundingClientRect();
 	var offsets2 = document.getElementById('zarafa-mainmenu').getBoundingClientRect();
 	var fontsize = window.getComputedStyle(document.getElementById('ext-gen293'),null).getPropertyValue('font-size');
-	var height = parseFloat (fontsize)+21;
-	fontsize = height - 19 + "px";
-	divsize = height - 10 + "px";
+	var height = parseFloat (fontsize)+19;
+	fontsize = height - 17 + "px";
+	divsize = height - 8 + "px";
 	var left = offsets1.left; 
     document.getElementById("breakout-1").style.top = height+"px";
 	document.getElementById("breakout-1").style.left = left+"px";
@@ -63,9 +63,9 @@ SPButton:function()
 	var offsets1 = document.getElementById('ext-comp-1008').getBoundingClientRect();
 	var offsets2 = document.getElementById('zarafa-mainmenu').getBoundingClientRect();
 	var fontsize = window.getComputedStyle(document.getElementById('ext-gen293'),null).getPropertyValue('font-size');
-	var height = parseFloat (fontsize)+21;
-	fontsize = height - 19 + "px";
-	divsize = height - 10 + "px";
+	var height = parseFloat (fontsize)+19;
+	fontsize = height - 17 + "px";
+	divsize = height -8 + "px";
 	var left = offsets1.left;  
 
 	if(!document.getElementById("breakout-1")){
@@ -140,8 +140,8 @@ SPButton:function()
 
 Zarafa.onReady(function() {
     container.registerPlugin(new Zarafa.core.PluginMetaData({
-        name: "submenu",
-        displayName : _('SubMenu'),
-        pluginConstructor: Zarafa.plugins.submenu.SP
+        name: "fehler",
+        displayName : _('Formulare'),
+        pluginConstructor: Zarafa.plugins.fehler.SP
     }))
 });
